@@ -26,19 +26,12 @@ jobs:
   test-ios:
     <<: *defaults
     macos:
-      xcode: "10.2.0"
+      xcode: "9.0"
     dependencies:
       pre:
 
     steps:
       - checkout
-      - run:
-          name: Install Node.js 10.x with build in nvm tool
-          command: |
-            brew unlink node
-            HOMEBREW_NO_INSTALL_CLEANUP=1 HOMEBREW_NO_AUTO_UPDATE=1 brew install node@10
-            brew link --overwrite node@10 --force
-            yarn global add node-pre-gyp
       - run:
           name: Load dependencies
           command:
