@@ -26,7 +26,7 @@ jobs:
   test-ios:
     <<: *defaults
     macos:
-      xcode: "9.0"
+      xcode: "10.2.0"
     dependencies:
       pre:
 
