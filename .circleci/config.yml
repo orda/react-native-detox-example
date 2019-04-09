@@ -33,6 +33,12 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Node.js 10.x with build in nvm tool
+          command: |
+            brew unlink node
+            HOMEBREW_NO_INSTALL_CLEANUP=1 HOMEBREW_NO_AUTO_UPDATE=1 brew install node@10
+            brew link --overwrite node@10 --force
+      - run:
           name: Load dependencies
           command:
             |
